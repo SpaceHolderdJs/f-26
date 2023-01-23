@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    padding: 1rem;
+    height: auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header nav {
+    width: auto;
+    height: auto;
+    align-items: center;
+    gap: 15px
+}
+
+header nav .btn-link {
+    text-decoration: none;
+}
+
+header nav .btn-link:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    padding: 10rem;
+}
+
+main h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+main p {
+    width: 50%;
+    text-align: center;
+}
+
+main section {
+    width: 90%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+main section .card {
+    width: 300px;
+}
+
+main section .card-header {
+    justify-content: center;
+}
+
+main section .card-body {
+    align-items: center;
+}
+
+main section .card-body h1 span {
+    color: grey;
+    font-size: 30px;
+}
