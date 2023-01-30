@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 40%;
+  margin: auto;
+  padding: 10px;
+}
+
+main form {
+  border: 2px solid grey;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+main form .form-control,
+main form .form-select {
+  border: 1px solid grey;
+  font-size: 20px;
+}
+
+main form .input-group-text {
+    background: black;
+    color: white;
+}

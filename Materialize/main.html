@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="flex">
+      <h2>Buttons</h2>
+      <button class="btn waves-effect waves-light btn-large">
+        <i class="material-icons right">fingerprint</i>
+        Button
+      </button>
+      <button class="btn waves-effect waves-light">Button</button>
+      <button class="btn waves-effect waves-light btn-small">Button</button>
+      <a class="btn-floating btn-large waves-effect waves-light red"
+        ><i class="material-icons">fingerprint</i></a
+      >
+      <button
+        class="btn waves-effect waves-light"
+        type="submit"
+        name="action"
+        disabled
+      >
+        Submit
+        <i class="material-icons right">send</i>
+      </button>
+      <h2>Badges</h2>
+      <div class="collection">
+        <a href="#!" class="collection-item"
+          ><span class="badge">1</span>Alan</a
+        >
+        <a href="#!" class="collection-item"
+          ><span class="new badge">4</span>Alan</a
+        >
+        <a href="#!" class="collection-item">Alan</a>
+        <a href="#!" class="collection-item"
+          ><span class="badge">14</span>Alan</a
+        >
+      </div>
+      <h2>Cards</h2>
+      <div class="flex">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <h3 class="card-title">Card Title</h3>
+            <p>
+              I am a very simple card. I am good at containing small bits of
+              information. I am convenient because I require little markup to
+              use effectively.
+            </p>
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+            <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="./assets/car.jpg" />
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="card-content">
+          <p>
+            I am a very simple card. I am good at containing small bits of
+            information. I am convenient because I require little markup to use
+            effectively.
+          </p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+
+      <div class="card waves-effect">
+        <div class="card-image">
+          <img src="./assets/car2.jpg" />
+          <span class="card-title">Card Title</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light blue"
+            ><i class="material-icons">add</i></a
+          >
+        </div>
+        <div class="card-content">
+          <p>
+            I am a very simple card. I am good at containing small bits of
+            information. I am convenient because I require little markup to use
+            effectively.
+          </p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="./assets/car3.jpg" />
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"
+            >Card Title<i class="material-icons right">more_vert</i></span
+          >
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal black">
+          <span class="card-title white-text text-darken-4"
+            >Card Title<i class="material-icons right">close</i></span
+          >
+          <p class="white-text">
+            Here is some more information about this product that is only
+            revealed once clicked on.
+          </p>
+        </div>
+      </div>
+
+      <div class="card small">
+        <div class="card-content">
+          <p>
+            I am a very simple card. I am good at containing small bits of
+            information. I am convenient because I require little markup to use
+            effectively.
+          </p>
+        </div>
+      </div>
+
+      <div class="card-tabs">
+        <ul class="tabs tabs-fixed-width">
+          <li class="tab"><a href="#test4">Test 1</a></li>
+          <li class="tab"><a class="active" href="#test5">Test 2</a></li>
+          <li class="tab"><a href="#test6">Test 3</a></li>
+        </ul>
+      </div>
+      <div class="card-content grey">
+        <section id="test4">Test 1</section>
+        <section id="test5">Test 2</section>
+        <section id="test6">Test 3</section>
+      </div>
+
+      <h2>Collections</h2>
+
+      <ul class="collection">
+        <li class="collection-item active">Alvin</li>
+        <li class="collection-item">Alvin</li>
+        <li class="collection-item">Alvin</li>
+        <div class="collection-item active">
+          <h4>Title</h4>
+          <div class="card small">
+            <div class="card-content">
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+          </div>
+        </div>
+      </ul>
+
+      <div class="collection">
+        <a href="#!" class="collection-item">Alvin</a>
+        <a href="#!" class="collection-item active">Alvin</a>
+        <a href="#!" class="collection-item">Alvin</a>
+        <a href="#!" class="collection-item">Alvin</a>
+      </div>
+
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="./assets/car.jpg" alt="" class="circle" />
+          <span class="title">Title</span>
+          <p>
+            First Line <br />
+            Second Line
+          </p>
+          <a href="#!" class="secondary-content"
+            ><i class="material-icons">grade</i></a
+          >
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle black">folder</i>
+          <span class="title">Title</span>
+          <p>
+            First Line <br />
+            Second Line
+          </p>
+          <a href="#!" class="secondary-content"
+            ><i class="material-icons">grade</i></a
+          >
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle black">insert_chart</i>
+          <span class="title">Title</span>
+          <p>
+            First Line <br />
+            Second Line
+          </p>
+          <a href="#!" class="secondary-content"
+            ><i class="material-icons">grade</i></a
+          >
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle black">play_arrow</i>
+          <span class="title">Title</span>
+          <p>
+            First Line <br />
+            Second Line
+          </p>
+          <a href="#!" class="secondary-content"
+            ><i class="material-icons">grade</i></a
+          >
+        </li>
+      </ul>
+
+      <h2>Nav</h2>
+      <section class="flex flex-column nav-wrapper">
+        <nav class="black">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Logo</a>
+            <ul id="nav-mobile" class="right">
+              <li><a href="#">Sass</a></li>
+              <li><a href="#">Components</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <nav>
+          <div class="nav-wrapper">
+            <div class="input-field">
+              <input id="search" type="search" required />
+              <label class="label-icon" for="search"
+                ><i class="material-icons">search</i></label
+              >
+              <i class="material-icons">close</i>
+            </div>
+          </div>
+        </nav>
+
+        <nav>
+          <div class="nav-wrapper">
+            <li class="collection-item avatar brand-logo">
+              <img
+                width="40"
+                height="40"
+                src="./assets/car.jpg"
+                alt=""
+                class="circle"
+              />
+            </li>
+            <!-- <a href="#!" class="brand-logo">Logo</a> -->
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+              ><i class="material-icons">menu</i></a
+            >
+            <ul class="right hide-on-med-and-down">
+              <li><a href="sass.html">Sass</a></li>
+              <li><a href="badges.html">Components</a></li>
+              <li><a href="collapsible.html">Javascript</a></li>
+              <li><a href="mobile.html">Mobile</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">Javascript</a></li>
+          <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+      </section>
+
+      <h2>Pagination</h2>
+
+      <ul class="pagination">
+        <li class="disabled">
+          <a href="#!"><i class="material-icons">chevron_left</i></a>
+        </li>
+        <li class="active"><a href="#!">1</a></li>
+        <li class="waves-effect active"><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect active"><a href="#!">4</a></li>
+        <li class="waves-effect disabled"><a href="#!">5</a></li>
+        <li class="waves-effect">
+          <a href="#!"><i class="material-icons">chevron_right</i></a>
+        </li>
+      </ul>
+
+      <h2>Loaders</h2>
+
+      <div class="progress">
+        <div class="determinate" style="width: 20%"></div>
+      </div>
+
+      <div class="progress">
+        <div class="indeterminate"></div>
+      </div>
+
+      <section class="loader-wrapper small">
+        <div class="preloader-wrapper active">
+          <div class="spinner-layer spinner-black-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h2>Footer</h2>
+
+      <footer class="page-footer black">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Footer Content</h5>
+              <p class="grey-text text-lighten-4">
+                You can use rows and columns here to organize your footer
+                content.
+              </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+                </li>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+                </li>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!">Link 3</a>
+                </li>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!">Link 4</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
+
+nav (header)
+card-row (2 cards)
+pagination
+footer
