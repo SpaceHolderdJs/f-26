@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main {
+  width: 70%;
+  height: 70%;
+  background: lightslategrey;
+  padding: 21px;
+  border-radius: 20px;
+}
+main h1 {
+  color: grey;
+}
+main p {
+  color: bisque;
+}
+main p a {
+  text-decoration: none;
+  font-size: 20px;
+  color: pink;
+}
+main span {
+  color: black;
+}

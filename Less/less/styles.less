@@ -1,0 +1,42 @@
+@padding: 20px + 1rem;
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    width: 70%;
+    height: 70%;
+    background: lightslategrey;
+    padding: @padding;
+    border-radius: 20px;
+
+    h1 {
+       color: grey
+    }
+
+    p {
+        color: bisque;
+        @aColor: pink;
+
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color: @aColor;
+        }
+    }
+
+    span {
+        color: black;
+    }
+}
+
+
+

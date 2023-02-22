@@ -58,3 +58,7 @@ main .loader-wrapper {
 main footer {
   width: 100%;
 }
+
+form {
+  padding: 20px;
+}

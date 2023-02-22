@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="carousel">
+      <a class="carousel-item" href="#one!">
+        <div class="column">
+          <p>Item</p>
+          <span>Span</span>
+          <img src="./assets/car.jpg" width="200" height="150" />
+        </div>
+      </a>
+      <a class="carousel-item" href="#two!"><img src="./assets/car.jpg" /></a>
+      <a class="carousel-item" href="#three!"><img src="./assets/car.jpg" /></a>
+      <a class="carousel-item" href="#four!"><img src="./assets/car.jpg" /></a>
+      <a class="carousel-item" href="#five!"><img src="./assets/car.jpg" /></a>
+    </div>
+
+    <ul id="slide-out" class="sidenav">
+        <li>
+          <div class="user-view">
+            <div class="background">
+              <img src="./assets/car3.jpg" />
+            </div>
+            <a href="#user"><img class="circle" src="./assets/car.jpg" /></a>
+            <a href="#name"><span class="white-text name">John Doe</span></a>
+            <a href="#email"
+              ><span class="white-text email">jdandturk@gmail.com</span></a
+            >
+          </div>
+        </li>
+        <li>
+          <a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a>
+        </li>
+        <li><a href="./slider.html">Slider link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="./main.html">Main page</a></li>
+      </ul>
+      <a href="#" data-target="slide-out" class="sidenav-trigger"
+        ><i class="material-icons">menu</i></a
+      >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./script2.js"></script>
+  </body>
+</html>
