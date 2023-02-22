@@ -17,7 +17,6 @@
 
 // const fn = () => {}
 
-
 // for (let element of arr2) {
 //     console.log(element, "element");
 // }
@@ -55,7 +54,7 @@
 // Написати функцію, приймає масив та повертає інший масив на базі отриманого, що містить лише числа
 
 // function fn (arr) {
-//     const result = []; // 1,3,10 
+//     const result = []; // 1,3,10
 
 //     for (let i = 0; i < arr.length; i = i + 1) {
 //         if (typeof arr[i] === "number") {
@@ -77,9 +76,7 @@
 //     }
 // }
 
-
 // const array = [new Human("Alex"), new Human("Igor"), {name: "Oleg"}, 0];
-
 
 // function checkInstance (takenClass, arrOfInstances ) {
 //     const result = [];
@@ -95,14 +92,13 @@
 
 // console.log(checkInstance(Human, array), "result");
 
-// push - додати у кінець 
+// push - додати у кінець
 // pop - забрати з кінця
 // shift - забрати з початку
 // unshift - додати елемент масиву на початок
 
 // const arr = [1, 3, 4 ];
 // arr.push(10);
-
 
 // const lastElem = arr.pop();
 
@@ -114,31 +110,93 @@
 
 // 1 Створити масив з 5 елементів, вирізати перший елемент та вставити його в кінець масиву
 
-const arr = [1, 2, 4, 5];
+// const arr = [1, 2, 4, 5];
 
-// for (let el of arr) {}
+// // for (let el of arr) {}
 
+// let sum = 0;
+// arr.forEach((el) => sum = sum + el);
 
-let sum = 0;
-arr.forEach((el) => sum = sum + el);
+// console.log(sum, "sum");
 
-console.log(sum, "sum");
-
-let number = 100;
+// let number = 100;
 
 // 2 Написати цикл, що іде по масиву та віднімає від числа кожен його елемент
 
 //3 написати функцію, що приймає масив та повертає його зворотню версію
 // [1,2,3] => [3,2,1]
 
-const fn = (arr) => {
-    const result = [];
+// const fn = (arr) => {
+//     const result = [];
 
-    arr.forEach((el) => result.push(arr.shift()));
+//     arr.forEach((el) => result.push(arr.shift()));
 
-    return result;
-} 
+//     return result;
+// }
 
-const arr1 = [1,2,3,34,5,6];
+// const arr1 = [1,2,3,34,5,6];
 
-console.log(fn(arr), "reverse");
+// console.log(fn(arr), "reverse");
+
+const arr = [1, 2, 3, 4, 5];
+
+const names = ["Igor", "Oleg", "Olena"];
+const ages = [{ age: 10 }, { age: 20 }, { age: 11 }];
+
+const arrOfString = arr.map((el, i) => el + 10);
+
+console.log(arrOfString, "result");
+
+const updatedAges = ages.map((object, i) => {
+    object.age += 1;
+    object.name = names[i];
+    return object;
+});
+
+const updatedNames = names.map((name, i) => {
+  return { name: name, age: ages[i].age };
+});
+
+console.log(updatedNames, "names");
+
+// 4. Написати функцію що приймає масив рядків та повертає масив з number на базі масиву з рядками
+// ["1", "2", "3"] => [1, 2, 3]
+
+console.log(
+  ["1", "2", "3"].map((el) => +el),
+  "result"
+);
+
+//filter
+
+//mutable
+
+const arr2 = ["1", 1, "Hello", 100];
+
+const result = arr2.filter((el) => typeof el === "string");
+
+console.log(result, "result");
+
+// 5. Дано масив const arr = [{age: 10}, {age: 22}, {age: 5}];
+// 6. Додати до масиву що повернув вам filter до поля age кожного об`єкта 20;
+// 7. Перегорніть отриманий масив
+
+const users = [
+  { name: "Oleg", age: 22, city: "Kharkiv" },
+  { name: "Oleg", age: 22, city: "Kyiv" },
+  { name: "Oleg", age: 40, city: "Poltava" },
+  { name: "Oleg", age: 30, city: "Poltava" },
+];
+
+// 1. Поверніть масив лише тих користувачів, що мають поле city
+// 2. На базі попреднього масиву визначте користувача з найбільшим віком
+
+let biggestAge = users[0];
+
+users.forEach((object) => {
+    if (object.age > biggestAge.age) {
+        biggestAge = object;
+    }
+});
+
+console.log(biggestAge, "biggest age");
