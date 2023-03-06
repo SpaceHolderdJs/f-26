@@ -257,12 +257,12 @@
 
 // console.log("result", result);
 
-const data = [
- { name: "Kyiv", population: 130 },
- { name: "Lviv", population: 230 },
- { name: "Kharkiv", population: 630 },
- { name: "Poltava", population: 430 },
-];
+// const data = [
+//   { name: "Kyiv", population: 130 },
+//   { name: "Lviv", population: 230 },
+//   { name: "Kharkiv", population: 630 },
+//   { name: "Poltava", population: 430 },
+// ];
 
 // Object.keys
 // Object.values
@@ -294,12 +294,385 @@ const data = [
 //   return result;
 // }
 
-const result2 = [1, "Hello", 2, "World"].reduce((acc, el) => {
-  if (typeof el === "string") {
-    acc.push(el);
+// const result2 = [1, "Hello", 2, "World"].reduce((acc, el) => {
+//   if (typeof el === "string") {
+//     acc.push(el);
+//   }
+
+//   return acc;
+// }, []);
+
+// console.log(result2, "result2");
+
+// const obj = {
+//   name: "Igor",
+//   sayHello: function () {
+//     console.log(`Hello, I am ${this.name}`);
+//   }
+// }
+
+// class Human {
+//   constructor (name) {
+//     this.name = name;
+//   }
+
+//   sayHello () {
+//     console.log(`Hello, I am ${this.name}`);
+//   }
+// }
+
+// const human = new Human("Olena");
+// human.sayHello();
+
+//rest ...
+//spread ...
+
+// const obj1 = {name: "Olena"};
+// console.log({...obj1}, "new object");
+
+// class SuperArray extends Array {
+//   constructor (...elements) {
+//     super(...elements);
+//   }
+
+//   showInfo () {
+//     console.log(this, "THIS", this.length);
+//   }
+
+//   at (index) {
+//     return {
+//       element: this[index],
+//       array: this
+//     }
+//   }
+
+//   push (el) {
+//     this[this.length] = el;
+//     console.log(el, this, this.length);
+//   }
+// }
+
+// const superArray = new SuperArray(1, 2, 3, 4, 5);
+// const superArray2 = new SuperArray("Hello", "world");
+
+// console.log(superArray.at(2), "at");
+// superArray.showInfo();
+// superArray2.push("!!!");
+// superArray2.showInfo();
+// superArray2.push(":)");
+// superArray2.showInfo();
+
+// const arr = [10, 20, 30];
+
+// const result = arr.reduce((acc, e) => (acc = acc + e), 100);
+// console.log(result, "result");
+
+// fill
+// const arr2 = new Array(10).fill("");
+// console.log(arr2, "arr");
+
+// reduce, sort
+
+// const arr3 = [10, 40, 30, 40, 20, 15];
+// arr3.sort((n1, n2) => n1 - n2); // 1, -1, 0
+// console.log(arr3, "sorted");
+
+// 1
+// const arr4 = [100, 105, 7, 8, 1, 4];
+
+// const arr5 = ["Apple", "apple", "y", "i"];
+// arr5.sort((str1, str2) => str2.localeCompare(str1));
+// console.log(arr5, "result");
+
+// 2
+
+// const arr6 = [
+//   { name: "Igor", score: 170 },
+//   { name: "Olena", score: 150 },
+//   { name: "Yula", score: 200 },
+// ];
+
+//flat
+
+// const arr7 = [1, 2, 3, [7, 0, 4], "str", [10], [100, [100, 50]]];
+// console.log(arr7.flat(), "flat");
+
+// Array.prototype.myFlat = function () {
+//   const result = [];
+
+//   for(let i = 0; i < this.length; i = i + 1) {
+//     if (Array.isArray(this[i])) {
+//       this[i].forEach((e) => result.push(e));
+//     } else {
+//       result.push(this[i]);
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(arr7.myFlat(), "myFlat");
+
+//3
+
+// const arr8 = [1, [10, 0], [1]];
+
+// const items = [
+//   ["item1", "item1", "item1"],
+//   ["item2", "item2", "item2"],
+//   ["item3", "item3", "item3"],
+// ];
+
+// for (let element of items) {
+//   console.log(element, "element");
+//   for (let item of element) {
+//     console.log(item, "item");
+//   }
+// }
+
+// items.forEach((el, i) => {
+//   console.log(el[0], i,  "el");
+//   // el.forEach((item) => console.log(item, "item"));
+// });
+
+// const data = [
+//   [10, 5, 6],
+//   [7, 2, 4],
+//   [10, 8, 5],
+//   [11, 10, 6],
+// ];
+
+// const sum = data.reduce((acc, el) => {
+//   acc = acc + el.reduce((acc2, el2) => acc2 = acc2 + el2);
+//   return acc;
+// },0);
+
+// const sum = data.flat().reduce((acc, el) => acc = acc + el);
+
+// console.log(sum, "sum");
+
+// const data = [
+//   [{ score: 10 }, { score: 100 }, { score: 17 }],
+//   [{ score: 10 }, { score: 10 }, { score: 5 }],
+//   [{ score: 2 }, { score: 8 }, {score: 1}],
+// ];
+
+// const scores = data.flat().map((obj) => obj.score);
+
+// console.log(Math.max(...scores), "max");
+
+// const data1 = [1, 2,3,4, "Hello", "World", {name: "Vasya"}];
+
+// const onlyNumbers = data1.filter((e) => typeof e === "string" );
+
+// console.log(onlyNumbers, "filtered");
+
+// const stringValue = data1.find((e) => e.name === "Vasya");
+
+// console.log(stringValue, "value");
+
+// const m = ["Igor", "Oleg", "Maxim", "Vasya"];
+// const w = ["Yana", "Katya", "Olena", "Yula"];
+
+// const users = [
+//   { name: "Igor", age: 10 },
+//   { name: "Vasya", age: 20 },
+//   { name: "Oleg", age: 30 },
+//   { name: "Yana", age: 30 },
+//   { name: "Olena", age: 30 },
+//   { name: "NoName", age: 10}
+// ];
+
+
+// const stranger =  users.find((e) => !w.concat(m).includes(e.name));
+// console.log(stranger, "stranger");
+
+// //
+// Array.prototype.myIncludes = function (element) {
+//     const result = this.find((e) => e === element ); //undefined | element
+//     return Boolean(result);
+// }
+
+// const arr = ["Hello", "World"];
+// console.log(arr.myIncludes("Hello2"), "result");
+
+//1. 
+const arr = [{a: 10}, {a: 11}, {a: 4}];
+
+arr.sort((obj1, obj2) => obj2.a - obj1.a);
+
+console.log(arr[0].a, "arr");
+
+// 1.1 Знайти середнє арифметичне полів а 
+// 2. Знайти найбільшу а
+// 3. Знайти сумму всіх а
+
+// let max = arr[0].a;
+
+// arr.forEach((e) => {
+//   if (e.a > max) {
+//     max = e.a;
+//   }
+// });
+
+// console.log(max, "max!!!");
+
+// for (let i = 0; i < 10; i = i + 1) {
+//   console.log(i, "index");
+// }
+// let isStopped = false;
+
+// const data = [];
+
+// while (!isStopped) {
+//   data.push(Math.floor(Math.random() * 10));
+//   if (data.length > 20) {
+//     isStopped = true;
+//   }
+// }
+
+// console.log(data, "data");
+
+
+// const questions = [confirm("Yes or no"), confirm("Red or blue"), confirm("A or B")];
+// const answers = [];
+
+// let i = 0;
+
+// while (i < questions.length) {
+//   let answer =  questions[i];
+//   answers.push(answer);
+//   i = i + 1;
+// }
+
+// console.log(answers, "answers");
+
+// 1. Написати свій цикл while, що виводить числа від 0 до 10;
+// const role = "admin";
+
+// switch (role) {
+//     case "admin": 
+//       console.log("I am a");
+//       break;
+//     case "user":
+//       console.log("I am b");
+//       break;
+//     case "guest":
+//       console.log("I am c");
+//       break;
+//     default:
+//       console.log("I am unknown symbol");
+// }
+
+
+// const color = prompt("Enter color");
+// console.log(color, "COLOR");
+
+
+//1. Запросити через prompt у користуача колір 
+// якщо колір білий - пофарбувати body в чорний колір
+// якщо колір чорний - пофарбувати body в білий колір
+// якщо це інші кольори - нічого не робимо
+
+// document.body.style.background = "";
+
+
+// if (role === "admin") {
+//   console.log("I am a");
+// } else if (role === "user") {
+//   console.log("I am b");
+// } else {
+//   console.log("I am unknown symbol");
+// }
+
+// const role = "admin";
+
+// const rolesScenarios = {
+//   admin: () => {
+//     console.log(`I am admin`);
+//   },
+//   user: () => {
+//     console.log(`I am user`);
+//   },
+//   guest: () => {
+//     console.log(`I am guest`);
+//   },
+//   default: () => {
+//     console.log(`I am default`);
+//   }
+// };
+
+// const scenario = rolesScenarios[role] || rolesScenarios.default;
+
+// scenario();
+
+// const userCommand = prompt("Enter your command");
+// const gretings = ["hola", "hello", "hi", "hallo"];
+
+// const scenarios = {
+//   "add_new_greeting": () => {
+//     const newGreeting = prompt("Enter new greeting word");
+//     gretings.push(newGreeting);
+//     alert("Greetings added");
+//   }
+// }
+
+// if (scenarios[userCommand]) {
+//   scenarios[userCommand]();
+// }
+
+// if (gretings.includes(userCommand)) {
+//   alert("Greetings");
+// }
+
+class UserInterface {
+  static greetings = ["hola", "hello"];
+
+  static scenarios = {
+    "add_greeting": () => {
+      const newGreeting = prompt("Enter greeting");
+
+      if (UserInterface.greetings.find((el) => el === newGreeting )) {
+        return alert("This greeting is already here");
+      }
+
+      UserInterface.greetings.push(newGreeting);
+      UserInterface.greetings = UserInterface.greetings.map((e) => e + "!");
+      console.log("greetings", UserInterface.greetings);
+      alert(UserInterface.greetings);
+    },
+    "greetings": () => {
+      const msg = prompt("Enter greeting");
+      if (UserInterface.greetings.includes(msg)) {
+        alert("Greetings");
+      }
+    },
+    "remove_greetings": () => {
+      const wordToRemove = prompt("Enter word to remove");
+      UserInterface.greetings = UserInterface.greetings.filter((e) => e !== wordToRemove );
+      alert("Word removed");
+    }
+  };
+
+  constructor () {
+    this.command(true);
   }
 
-  return acc;
-}, []);
+  command (isRecursive = false) {
+    this.command = prompt("Enter command");
+    const action = UserInterface.scenarios[this.command];
 
-console.log(result2, "result2");
+    if (action) {
+      action();
+    }
+
+    if (isRecursive) {
+      new UserInterface();
+    }
+
+  }
+}
+
+new UserInterface();
+
+// додати сценарій (так команду) що видаляє слово вітання з вашого масиву вітань (слово треба передати у prompt)
