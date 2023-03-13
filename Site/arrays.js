@@ -483,7 +483,6 @@
 //   { name: "NoName", age: 10}
 // ];
 
-
 // const stranger =  users.find((e) => !w.concat(m).includes(e.name));
 // console.log(stranger, "stranger");
 
@@ -496,14 +495,14 @@
 // const arr = ["Hello", "World"];
 // console.log(arr.myIncludes("Hello2"), "result");
 
-//1. 
-const arr = [{a: 10}, {a: 11}, {a: 4}];
+//1.
+const arr = [{ a: 10 }, { a: 11 }, { a: 4 }];
 
 arr.sort((obj1, obj2) => obj2.a - obj1.a);
 
 console.log(arr[0].a, "arr");
 
-// 1.1 Знайти середнє арифметичне полів а 
+// 1.1 Знайти середнє арифметичне полів а
 // 2. Знайти найбільшу а
 // 3. Знайти сумму всіх а
 
@@ -533,7 +532,6 @@ console.log(arr[0].a, "arr");
 
 // console.log(data, "data");
 
-
 // const questions = [confirm("Yes or no"), confirm("Red or blue"), confirm("A or B")];
 // const answers = [];
 
@@ -551,7 +549,7 @@ console.log(arr[0].a, "arr");
 // const role = "admin";
 
 // switch (role) {
-//     case "admin": 
+//     case "admin":
 //       console.log("I am a");
 //       break;
 //     case "user":
@@ -564,18 +562,15 @@ console.log(arr[0].a, "arr");
 //       console.log("I am unknown symbol");
 // }
 
-
 // const color = prompt("Enter color");
 // console.log(color, "COLOR");
 
-
-//1. Запросити через prompt у користуача колір 
+//1. Запросити через prompt у користуача колір
 // якщо колір білий - пофарбувати body в чорний колір
 // якщо колір чорний - пофарбувати body в білий колір
 // якщо це інші кольори - нічого не робимо
 
 // document.body.style.background = "";
-
 
 // if (role === "admin") {
 //   console.log("I am a");
@@ -625,54 +620,359 @@ console.log(arr[0].a, "arr");
 //   alert("Greetings");
 // }
 
-class UserInterface {
-  static greetings = ["hola", "hello"];
+// class UserInterface {
+//   static greetings = ["hola", "hello"];
 
-  static scenarios = {
-    "add_greeting": () => {
-      const newGreeting = prompt("Enter greeting");
+//   static scenarios = {
+//     "add_greeting": () => {
+//       const newGreeting = prompt("Enter greeting");
 
-      if (UserInterface.greetings.find((el) => el === newGreeting )) {
-        return alert("This greeting is already here");
-      }
+//       if (UserInterface.greetings.find((el) => el === newGreeting )) {
+//         return alert("This greeting is already here");
+//       }
 
-      UserInterface.greetings.push(newGreeting);
-      UserInterface.greetings = UserInterface.greetings.map((e) => e + "!");
-      console.log("greetings", UserInterface.greetings);
-      alert(UserInterface.greetings);
-    },
-    "greetings": () => {
-      const msg = prompt("Enter greeting");
-      if (UserInterface.greetings.includes(msg)) {
-        alert("Greetings");
-      }
-    },
-    "remove_greetings": () => {
-      const wordToRemove = prompt("Enter word to remove");
-      UserInterface.greetings = UserInterface.greetings.filter((e) => e !== wordToRemove );
-      alert("Word removed");
-    }
-  };
+//       UserInterface.greetings.push(newGreeting);
+//       UserInterface.greetings = UserInterface.greetings.map((e) => e + "!");
+//       console.log("greetings", UserInterface.greetings);
+//       alert(UserInterface.greetings);
+//     },
+//     "greetings": () => {
+//       const msg = prompt("Enter greeting");
+//       if (UserInterface.greetings.includes(msg)) {
+//         alert("Greetings");
+//       }
+//     },
+//     "remove_greetings": () => {
+//       const wordToRemove = prompt("Enter word to remove");
+//       UserInterface.greetings = UserInterface.greetings.filter((e) => e !== wordToRemove );
+//       alert("Word removed");
+//     }
+//   };
 
-  constructor () {
-    this.command(true);
-  }
+//   constructor () {
+//     this.command(true);
+//   }
 
-  command (isRecursive = false) {
-    this.command = prompt("Enter command");
-    const action = UserInterface.scenarios[this.command];
+//   command (isRecursive = false) {
+//     this.command = prompt("Enter command");
+//     const action = UserInterface.scenarios[this.command];
 
-    if (action) {
-      action();
-    }
+//     if (action) {
+//       action();
+//     }
 
-    if (isRecursive) {
-      new UserInterface();
-    }
+//     if (isRecursive) {
+//       new UserInterface();
+//     }
 
+//   }
+// }
+
+// new UserInterface();
+
+// додати сценарій (так команду) що видаляє слово вітання з вашого масиву вітань (слово треба передати у prompt)
+
+// const array = [
+//   { city: "Kyiv", population: 0 },
+//   { city: "Lviv", population: 0 },
+//   { city: "Poltava", population: 0 },
+//   { city: "New York", population: 0 },
+//   { city: "London", population: 0 },
+// ];
+// const populations = [10000, 50000, 4000, 60000, 3000];
+// const ukrainianCities = ["Kyiv", "Lviv", "Odessa", "Poltava"];
+
+//1. Заповнити поля population кожного елемента масиву array відповідним за індексом елементом з масиву populations
+//2. Після заповнення повернути загальну сумму всіх полів population у масиві array
+
+//3. Змініть ваш код таким чином, щоб сума популяції враховувала лише українські міста (з масиву ukrainianCities)
+
+// let result = 0;
+// let iterator = 0;
+// for (let object of array) {
+//   object.population = populations[iterator];
+//   iterator = iterator + 1;
+// }
+// console.log(result);
+
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   sayHello() {
+//     console.table(this, "Here I am");
+//   }
+// }
+
+// class User {
+//   constructor(person, email, password) {
+//     if (person) {
+//       for (let key in person) {
+//         this[key] = person[key];
+//       }
+//       this.isPrivateUser = false;
+//     } else {
+//       this.isPrivateUser = true;
+//     }
+
+//     this.email = email;
+//     this.password = password;
+//   }
+
+// }
+
+// const person = new Person("Igor Person", 23);
+
+// Person.prototype.sayHi = function () {
+//   console.log("Hi");
+// }
+
+// person.sayHello();
+// person.sayHi();
+
+// for (let key in Person.prototype) {
+//   console.log(Person.prototype[key], "method");
+// }
+
+// const publicUser = new User(person, "sergienko339@gmail.com", "password");
+// const privateUser = new User(null, "privateuseremail@gmail.com", "password2");
+
+// console.log(person, publicUser, privateUser, "data");
+
+// Person.prototype.sayHello.apply(publicUser);
+// User.prototype.sayHello = Person.prototype.sayHello.bind(publicUser);
+
+// publicUser.sayHello();
+// privateUser.sayHello();
+
+// call, bind, apply
+
+// function f1 (x) {
+//   console.log(this, "this", x + 10);
+// }
+
+// f1(100, 1);
+
+// f1.apply({n: 1}, [5]);
+
+// function fn(obj, count, a) {
+//   console.log(this, obj, count);
+// }
+
+// fn({name: "Igor"}, 100, 90);
+
+// fn.apply(window, [{name: "Igor"}, 100, 90]);
+// fn.call(window, {name: "Igor"}, 100, 90);
+// fn.bind(window, {name: "Igor"}, 100, 90);
+
+// fn.apply([1, 2, 2]);
+
+//1. Створити функцію, що працює з this та викликати її за допомогою bind передавши в неї інший контекст (object)
+
+// const arr1 = [1,2,3,4,5, 1000];
+
+// console.log(Math.max.apply(null, arr1), "max");
+// console.log(Math.min.apply(null, arr1), "min");
+
+// const minAndMaxFromArray = (arr) => [ Math.min.apply(null, arr), Math.max.apply(null, arr) ];
+
+// console.log(minAndMaxFromArray([1,2,6, 4, 0, 9, 1, 1000, 1]));
+
+// 1. ForEach
+
+const users = [
+  { name: "Igor" },
+  { name: "Oleg" },
+  { name: "Igor" },
+  { name: "Igor" },
+  { name: "Igor" },
+  { name: "Igor" },
+];
+
+const result = [];
+
+users.forEach((e, i) => {
+  const subArray = users.slice(i * 3, i * 3 + 3);
+  result.push(subArray);
+});
+
+console.log(
+  result.filter((subArray) => subArray.length > 0),
+  "result"
+);
+
+class Counter {
+  constructor(initialValue) {
+    this.count = initialValue;
   }
 }
 
-new UserInterface();
+let start = 0;
+let end = 3;
 
-// додати сценарій (так команду) що видаляє слово вітання з вашого масиву вітань (слово треба передати у prompt)
+while (start < Math.floor(users.length / 3)) {
+  users.slice(start, end);
+  start = start + 3;
+  end = end + 3;
+}
+
+//1. Реалізувати наступну логічну конструкцію
+// new Counter(10).increment().increment().decrement().increment()
+// new Counter(100).add(60).divide(90)
+// new Counter(70).doubleValue().doubleValue()
+
+// Array.prototype.myForeach = function (fn) {
+//   for (let i = 0; i < this.length; i++ ) {
+//     fn(this[i], i, this);
+//   }
+// }
+
+// 2. Написати функцію що заповнює масив вказаною кількістю рандомних чисел, що гарантовано не повторюються !!!
+
+function randomizer(arr, itemsQuantity) {
+  const getRandomNumber = () => {
+    let randomNumber = Math.floor(Math.random() * 100);
+
+    while (arr.includes(randomNumber)) {
+      randomNumber = Math.floor(Math.random() * 100);
+    }
+
+    return randomNumber;
+  };
+
+  for (let i = 0; i < itemsQuantity; i++) {
+    arr.push(getRandomNumber());
+  }
+
+  return arr;
+}
+
+const result2 = randomizer([1, 2, 3], 10);
+console.log(result2, "!!!!");
+
+// project, developer, company
+// company -> project
+// company -> developer
+// project -> developer
+
+class DefaultMethods {
+  constructor() {}
+
+  showInfo() {
+    console.log(this);
+  }
+}
+
+class Company extends DefaultMethods {
+  constructor(name, projects, age) {
+    super();
+    this.name = name;
+    this.projects = projects;
+    this.developers = this.getDevelopersFromProjects(); // method to implement
+    this.age = age;
+  }
+
+  addProject(newProject) {
+    if (newProject instanceof Project) {
+      this.projects.push(newProject);
+      return;
+    }
+    new Error("Item is not belongs to proper Class");
+  }
+
+  removeProject(projectToDelete) {
+    if (projectToDelete instanceof Project) {
+      this.projects = this.projects.filter(
+        ({ name }) => projectToDelete.name !== name
+      );
+      return;
+    }
+    new Error("Item is not belongs to proper Class");
+  }
+
+  addDeveloper(newDeveloper) {
+    if (newDeveloper instanceof Developer) {
+      this.developers.push(newDeveloper);
+      return;
+    }
+    new Error("Item is not belongs to proper Class");
+  }
+
+  removeDeveloper(developerToDelete) {
+    if (developerToDelete instanceof Developer) {
+      this.developers = this.developers.filter(
+        ({ name }) => developerToDelete.name !== name
+      );
+      return;
+    }
+    new Error("Item is not belongs to proper Class");
+  }
+}
+
+class Project extends DefaultMethods {
+  constructor(name, duration, developers, budget) {
+    super();
+    this.name = name;
+    this.duration = duration;
+    this.developers = developers;
+    this.budget = budget;
+  }
+
+  addDeveloper(newDeveloper) {
+    if (newDeveloper instanceof Developer) {
+      this.developers.push(newDeveloper);
+      return;
+    }
+    new Error("Item is not belongs to proper Class");
+  }
+
+  removeDeveloper(developerToDelete) {
+    if (developerToDelete instanceof Developer) {
+      this.developers = this.developers.filter(
+        ({ name }) => developerToDelete.name !== name
+      );
+      return;
+    }
+    new Error("Item is not belongs to proper Class");
+  }
+}
+
+class Developer extends DefaultMethods {
+  constructor(name, age, salary, skills) {
+    super();
+    this.name = name;
+    this.age = age;
+    this.salary = salary;
+    this.skills = skills;
+  }
+
+  addSkill(newSkill) {
+    if (!this.skills.includes(newSkill)) {
+      this.skills.push(newSkill);
+    }
+  }
+
+  removeSkill(skillToRemove) {
+    this.skills = this.skills.filter((skill) => skill !== skillToRemove);
+  }
+}
+
+const amazon = new Company("Amazon", [
+  new Project(
+    "Frontend",
+    1.5,
+    [new Developer("John", 27, 3000, ["JS", "CSS"])],
+    25000
+  ),
+  new Project(
+    "Backend",
+    1.5,
+    [new Developer("Bob", 47, 6000, ["Node.js", "Express"])],
+    15000
+  ),
+], [], 20);
+
+// 1. Видалення скіла за назвою
+// 2. При створенні скіла переконатися, що його ще немає в списку скілів
