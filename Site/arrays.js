@@ -869,14 +869,20 @@ class DefaultMethods {
   close () {
     if (this instanceof Developer) return;
 
+    if (this instanceof Company || this instanceof Project) {
+      for (let developer of this.developers) {
+        this.removeDeveloper(developer);
+      }
+    }
+
     if (this instanceof Company) {
-      //
+      this.projects.forEach((project) => project.close());
+      this.isClosed = true;
     }
 
     if (this instanceof Project) {
       this.isClosed = true;
     }
-
 
   }
 }
@@ -984,10 +990,11 @@ class Project extends DefaultMethods {
 }
 
 class Developer extends DefaultMethods {
-  constructor(name, age, salary, skills) {
+  constructor(name, age, birthdayDate, salary, skills) {
     super(false);
     this.name = name;
     this.age = age;
+    this.birthdayDate = birthdayDate;
     this.salary = salary;
     this.skills = skills;
   }
@@ -1003,8 +1010,17 @@ class Developer extends DefaultMethods {
   }
 
   birthday() {
-    this.age++;
-    this.salary = this.salary + this.salary * 0.3;
+    const birthDate = this.birthdayDate.getDate();
+    const birthMonth = this.birthdayDate.getMonth() + 1;
+
+    const currentDate = new Date();
+    const todaysDate = currentDate.getDate();
+    const todaysMonth = currentDate.getMonth() + 1;
+
+    if ((birthDate === todaysDate) && (birthMonth === todaysMonth)) {
+      this.age++;
+      this.salary = this.salary + this.salary * 0.3;
+    }
   }
 
   increaseSalary(amount) {
@@ -1022,13 +1038,13 @@ const amazon = new Company(
     new Project(
       "Frontend",
       1.5,
-      [new Developer("John", 27, 3000, ["JS", "CSS"])],
+      [new Developer("John", 27, new Date(),  3000, ["JS", "CSS"])],
       25000
     ),
     new Project(
       "Backend",
       1.5,
-      [new Developer("Bob", 47, 6000, ["Node.js", "Express"])],
+      [new Developer("Bob", 47, new Date(),  6000, ["Node.js", "Express"])],
       15000
     ),
   ],
@@ -1038,3 +1054,25 @@ const amazon = new Company(
 amazon.showInfo();
 amazon.projects[0].finish(true);
 amazon.showInfo();
+amazon.close();
+amazon.showInfo();
+
+const date = new Date();
+
+date.setDate(7);
+date.setMonth(7);
+date.setFullYear(1999);
+date.setHours(10);
+date.setSeconds(10);
+date.setMinutes(55);
+date.setMilliseconds(20);
+
+console.log(date.getMilliseconds() < new Date().getMilliseconds(), "result");
+
+console.log(date.getDay(), "week day");
+console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()}`, "time")
+
+
+const testDeveloper = new Developer("Test", 0, new Date(), 4000, ["Node.js"]);
+testDeveloper.birthday();
+testDeveloper.showInfo();
