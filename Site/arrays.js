@@ -858,20 +858,45 @@ console.log(result2, "!!!!");
 // project -> developer
 
 class DefaultMethods {
-  constructor() {}
+  constructor(isClosed) {
+    this.isClosed = isClosed;
+  }
 
   showInfo() {
     console.log(this);
+  }
+
+  close () {
+    if (this instanceof Developer) return;
+
+    if (this instanceof Company) {
+      //
+    }
+
+    if (this instanceof Project) {
+      this.isClosed = true;
+    }
+
+
   }
 }
 
 class Company extends DefaultMethods {
   constructor(name, projects, age) {
-    super();
+    super(false);
     this.name = name;
     this.projects = projects;
     this.developers = this.getDevelopersFromProjects(); // method to implement
     this.age = age;
+  }
+
+  getDevelopersFromProjects() {
+    const developers = this.projects.reduce((acc, project) => {
+      project.developers.forEach((developer) => acc.push(developer));
+      return acc;
+    }, []);
+
+    return developers;
   }
 
   addProject(newProject) {
@@ -913,7 +938,7 @@ class Company extends DefaultMethods {
 
 class Project extends DefaultMethods {
   constructor(name, duration, developers, budget) {
-    super();
+    super(false);
     this.name = name;
     this.duration = duration;
     this.developers = developers;
@@ -937,11 +962,30 @@ class Project extends DefaultMethods {
     }
     new Error("Item is not belongs to proper Class");
   }
+
+  finish(isSuccess) {
+
+    // if (isSuccess) {
+    //   this.developers.forEach((developer) =>
+    //     developer.increaseSalary((this.budget / this.developers.length) * 0.5)
+    //   );
+    // } else {
+    //   this.developers.forEach((developer) =>
+    //     developer.decreaseSalary(developer.salary * 0.3)
+    //   );
+    // }
+
+    this.developers.forEach((developer) =>
+      isSuccess
+        ? developer.increaseSalary((this.budget / this.developers.length) * 0.5)
+        : developer.decreaseSalary(developer.salary * 0.3)
+    );
+  }
 }
 
 class Developer extends DefaultMethods {
   constructor(name, age, salary, skills) {
-    super();
+    super(false);
     this.name = name;
     this.age = age;
     this.salary = salary;
@@ -957,22 +1001,40 @@ class Developer extends DefaultMethods {
   removeSkill(skillToRemove) {
     this.skills = this.skills.filter((skill) => skill !== skillToRemove);
   }
+
+  birthday() {
+    this.age++;
+    this.salary = this.salary + this.salary * 0.3;
+  }
+
+  increaseSalary(amount) {
+    this.salary += amount;
+  }
+
+  decreaseSalary(amount) {
+    this.salary -= amount;
+  }
 }
 
-const amazon = new Company("Amazon", [
-  new Project(
-    "Frontend",
-    1.5,
-    [new Developer("John", 27, 3000, ["JS", "CSS"])],
-    25000
-  ),
-  new Project(
-    "Backend",
-    1.5,
-    [new Developer("Bob", 47, 6000, ["Node.js", "Express"])],
-    15000
-  ),
-], [], 20);
+const amazon = new Company(
+  "Amazon",
+  [
+    new Project(
+      "Frontend",
+      1.5,
+      [new Developer("John", 27, 3000, ["JS", "CSS"])],
+      25000
+    ),
+    new Project(
+      "Backend",
+      1.5,
+      [new Developer("Bob", 47, 6000, ["Node.js", "Express"])],
+      15000
+    ),
+  ],
+  20
+);
 
-// 1. Видалення скіла за назвою
-// 2. При створенні скіла переконатися, що його ще немає в списку скілів
+amazon.showInfo();
+amazon.projects[0].finish(true);
+amazon.showInfo();
