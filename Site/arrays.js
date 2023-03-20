@@ -857,6 +857,17 @@ console.log(result2, "!!!!");
 // company -> developer
 // project -> developer
 
+const birthdaySetter = (d, m, y) => {
+  const date = new Date();
+  date.setDate(d);
+  date.setMonth(m - 1);
+  date.setFullYear(y);
+
+  console.log(date.toString(), "result");
+
+  return date;
+}
+
 class DefaultMethods {
   constructor(isClosed) {
     this.isClosed = isClosed;
@@ -866,6 +877,17 @@ class DefaultMethods {
     console.log(this);
   }
 
+  checkBirthday() {
+    if (!this instanceof Developer) {
+      return
+    } 
+
+    if (this instanceof Company || this instanceof Project) {
+      this.developers.forEach((developer) => developer.birthday())
+    }
+
+  }
+ 
   close () {
     if (this instanceof Developer) return;
 
@@ -1018,6 +1040,7 @@ class Developer extends DefaultMethods {
     const todaysMonth = currentDate.getMonth() + 1;
 
     if ((birthDate === todaysDate) && (birthMonth === todaysMonth)) {
+      console.log("It`s birthday");
       this.age++;
       this.salary = this.salary + this.salary * 0.3;
     }
@@ -1056,6 +1079,7 @@ amazon.projects[0].finish(true);
 amazon.showInfo();
 amazon.close();
 amazon.showInfo();
+amazon.checkBirthday();
 
 const date = new Date();
 
@@ -1066,6 +1090,7 @@ date.setHours(10);
 date.setSeconds(10);
 date.setMinutes(55);
 date.setMilliseconds(20);
+console.log(date.toString(), "string");
 
 console.log(date.getMilliseconds() < new Date().getMilliseconds(), "result");
 
@@ -1073,6 +1098,6 @@ console.log(date.getDay(), "week day");
 console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()}`, "time")
 
 
-const testDeveloper = new Developer("Test", 0, new Date(), 4000, ["Node.js"]);
+const testDeveloper = new Developer("Test", 0, birthdaySetter(7, 7, 1999), 4000, ["Node.js"]);
 testDeveloper.birthday();
 testDeveloper.showInfo();
